@@ -7,6 +7,7 @@ Basic Blog with Embedded Models App notes
 Objective
 =========
     In this application study, we'll make a blog application with Crud Operations (Create, Read, Update, and Delete) 
-    functionality with mongoose and add additional embedded models functionality to it. 
-
-    See Basic-Blog-App for the original mongoose application: https://github.com/john-azzaro/Basic-Blog-App
+    functionality with mongoose and add additional embedded models functionality to it. I'm going to go step-by-step
+    through the process of createing a blog application with the additional features of embedded models for the 
+    applications. If you would like to see a more in-depth process of the phases before the addition of the embedded 
+    models, see Basic-Blog-App here: https://github.com/john-azzaro/Basic-Blog-App .
