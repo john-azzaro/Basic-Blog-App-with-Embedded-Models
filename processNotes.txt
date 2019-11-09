@@ -31,14 +31,16 @@ Process Workflow Summary
 
 Phase 1: Project Setup
 ======================
-    // Project Setup
+    // Project Setup:
         1. Create project folder (Basic-Blog-App-with-Embedded-Models).                -- create a folder to store your projetc
         2. npm init                                                                    -- create a package.json file to start your project off.
-    // Install Express    
+    // Install Express:    
         3. npm install express                                                         -- install express.
-    // Add gitignore
+    // Add gitignore:
         4. add .gitignore and add node_modules                                         -- omits node_modules from git submission.
-    // Install dependencies
+    // Install dependencies:
         5. npm install mongoose morgan uuid                                            -- install initial dependencies you'll need for the application.
-    // Install Dev dependencies
+    // Install Dev dependencies:
         6. npm install --dev-dev nodemon                                               -- install intial dependencies for development.
+    // Create custom script for development:
+        7. "devStart": "nodemon server.js"                                             -- place this in dev dependencies for quick start of the server with nodemon.
