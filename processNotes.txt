@@ -31,5 +31,6 @@ Process Workflow Summary
 
 Phase 1: Project Setup
 ======================
-    1. Create project folder (Basic-Blog-App-with-Embedded-Models).         -- create a folder to store your projetc
-    2. npm init.                                                            -- create a package.json file to start your project off.
+    1. Create project folder (Basic-Blog-App-with-Embedded-Models).                -- create a folder to store your projetc
+    2. npm init                                                                    -- create a package.json file to start your project off.
+    3. npm install express                                                         -- install express.

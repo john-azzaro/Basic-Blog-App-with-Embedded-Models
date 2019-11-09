@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/john-azzaro/Basic-Blog-App-with-Embedded-Models/issues"
   },
-  "homepage": "https://github.com/john-azzaro/Basic-Blog-App-with-Embedded-Models#readme"
+  "homepage": "https://github.com/john-azzaro/Basic-Blog-App-with-Embedded-Models#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
