@@ -42,5 +42,7 @@ Phase 1: Project Setup
         5. npm install mongoose morgan uuid                                            -- install initial dependencies you'll need for the application.
     // Install Dev dependencies:
         6. npm install --dev-dev nodemon                                               -- install intial dependencies for development.
+    // Create server.js file:
+        7. server.js                                                                   -- create your server file.   
     // Create custom script for development:
         7. "devStart": "nodemon server.js"                                             -- place this in dev dependencies for quick start of the server with nodemon.
