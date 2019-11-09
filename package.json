@@ -1,0 +1,22 @@
+{
+  "name": "basic-blog-app-with-embedded-models",
+  "version": "1.0.0",
+  "description": "Basic blog application with embedded models",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-azzaro/Basic-Blog-App-with-Embedded-Models.git"
+  },
+  "keywords": [
+    "embedded-models"
+  ],
+  "author": "John Azzaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john-azzaro/Basic-Blog-App-with-Embedded-Models/issues"
+  },
+  "homepage": "https://github.com/john-azzaro/Basic-Blog-App-with-Embedded-Models#readme"
+}

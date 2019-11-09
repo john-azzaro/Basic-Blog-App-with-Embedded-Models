@@ -1,4 +1,4 @@
-Basic Blog with Embedded Models App notes
+Basic Blog App with Embedded Models notes
 =========================================
 
 
@@ -9,5 +9,27 @@ Objective
     In this application study, we'll make a blog application with Crud Operations (Create, Read, Update, and Delete) 
     functionality with mongoose and add additional embedded models functionality to it. I'm going to go step-by-step
     through the process of createing a blog application with the additional features of embedded models for the 
-    applications. If you would like to see a more in-depth process of the phases before the addition of the embedded 
-    models, see Basic-Blog-App here: https://github.com/john-azzaro/Basic-Blog-App .
+    applications. 
+        
+    If you would like to see a more in-depth process of the phases before the addition of the embedded 
+    models, see Basic-Blog-App here: https://github.com/john-azzaro/Basic-Blog-App . Note thatI'm using this current
+    application to repeat and internalize the process for study purposes, so this may be a bit repetitive so please skip
+    down to the embedded models section if you are familiar with the orginal basic-blog-app.
+
+
+
+
+Process Workflow Summary
+========================
+    Phase 1: Project Setup
+
+
+
+
+
+
+
+Phase 1: Project Setup
+======================
+    1. Create project folder (Basic-Blog-App-with-Embedded-Models).         -- create a folder to store your projetc
+    2. npm init.                                                            -- create a package.json file to start your project off.
