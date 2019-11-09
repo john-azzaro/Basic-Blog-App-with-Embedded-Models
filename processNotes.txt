@@ -46,3 +46,21 @@ Phase 1: Project Setup
         7. server.js                                                                   -- create your server file.   
     // Create custom script for development:
         7. "devStart": "nodemon server.js"                                             -- place this in dev dependencies for quick start of the server with nodemon.
+
+
+
+
+Phase 2: Create a basic express app
+===================================
+    1. Create express app:
+        ----------------------------------------------
+        const express = required('express');
+        const app = express();
+        ----------------------------------------------
+    2. Create a basic server:
+        ----------------------------------------------
+        let server;
+        server = app.listen('3000', () => {
+            console.log()
+        });
+        ----------------------------------------------
