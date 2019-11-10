@@ -97,8 +97,8 @@ Phase 3: Setup database and server connection:
         ------------------------------------------------------------
             const {DATABASE_URL, PORT} = require('./config.js');
         -------------------------------------------------------------
-    6. Add runServer and closeServer functions:
-        -------------------------------------------------------------------------
+    6. Add runServer function:
+        ------------------------------------------------------------------------------------------------------------
             function runServer(databaseUrl, port=PORT) {                                                                  // To Run server: 
                 return new Promise((resolve, reject) => {                                                                 // return Promise in which...
                     mongoose.connect(databaseUrl, { useNewUrlParser: true,  useUnifiedTopology: true }, err => {          // Mongoose connects to database:
@@ -117,9 +117,26 @@ Phase 3: Setup database and server connection:
                     });
                 });
             }   
-
-        function closeServer() {
-
-        }
-        -------------------------------------------------------------------------
-    7. 
+        --------------------------------------------------------------------------------------------------------------
+    7. Add closeServer function:
+        ---------------------------------------------------------------------------------------------------------------
+            function closeServer() {                                                                                       // To close server:
+                return mongoose.disconnect().then(function() {                                                                  // disconnect and then...
+                    return new Promise(function(resolve, reject) {                                                              // return a promise which...
+                        console.log("Closing server");                                                                     // ... will log "closing server"...
+                        server.close(function(err) {                                                                              // and close the server...
+                    if (err) {                                                                                             // and if there is an error, reject...
+                    return reject(err);                                  
+                    }
+                    resolve();                                                                                             // else resolve.
+                });
+                });
+            });
+            }
+        ---------------------------------------------------------------------------------------------------------------
+    8. In case server.js is called directly:
+        -------------------------------------------------------------------------------------------
+            if (require.main === module) { 
+                runServer(DATABASE_URL).catch(err => console.error(err));
+            }
+        -------------------------------------------------------------------------------------------
