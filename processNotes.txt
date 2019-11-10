@@ -97,3 +97,13 @@ Phase 3: Setup database and server connection:
         ------------------------------------------------------------
             const {DATABASE_URL, PORT} = require('./config.js');
         -------------------------------------------------------------
+    6. Add runServer and closeServer functions:
+        -------------------------------------------------------------------------
+        function runServer() {
+
+        }
+
+        function closeServer() {
+            
+        }
+        -------------------------------------------------------------------------

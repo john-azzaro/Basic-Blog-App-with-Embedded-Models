@@ -17,3 +17,12 @@ let server;
 server = app.listen('3000', function() {
     console.log('Your app is listening on port 3000...');
 })
+
+
+function runServer() {
+
+}
+
+function closeServer() {
+    
+}
