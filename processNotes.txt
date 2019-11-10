@@ -76,4 +76,7 @@ Phase 2: Create a basic express app
 
 Phase 3: Setup database and server connection:
 ==============================================
-    1. 
+    1. Import mongoose
+        ------------------------------------------------------
+            const mongoose = require('mongose');
+        ------------------------------------------------------
