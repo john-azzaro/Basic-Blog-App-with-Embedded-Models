@@ -1,6 +1,7 @@
 //Imports:
 const express = require('express');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 mongoose.Promise = global.Promise;
 
 
@@ -14,6 +15,7 @@ const app = express();
 
 //Middleware:
 app.use(express.json());
+app.use(morgan('common'));
 
 
 //Routes:

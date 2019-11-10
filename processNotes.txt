@@ -150,3 +150,9 @@ Phase 4: Add initial middleware
         ----------------------------------------
             app.use(express.json());
         ----------------------------------------
+
+    2. Install Morgan:
+        ----------------------------------------
+            const morgan = require('morgan');
+            app.use(morgan('common'))
+        ----------------------------------------
