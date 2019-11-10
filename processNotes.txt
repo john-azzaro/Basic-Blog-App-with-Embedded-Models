@@ -58,9 +58,15 @@ Phase 2: Create a basic express app
         const app = express();
         ----------------------------------------------
     2. Create a basic server:
-        ----------------------------------------------
+        --------------------------------------------------------
         let server;
-        server = app.listen('3000', () => {
-            console.log()
+        server = app.listen('3000', function() {
+            console.log('Server is listening on port 3000...')
         });
-        ----------------------------------------------
+        ---------------------------------------------------------
+    3. Create a basic GET request to test connection:
+        ---------------------------------------------------------
+        app.get('/', function(req, res) {
+            res.send('This is a test');
+        })
+        ---------------------------------------------------------
