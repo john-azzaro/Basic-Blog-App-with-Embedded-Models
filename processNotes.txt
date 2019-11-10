@@ -78,9 +78,9 @@ Phase 3: Setup database and server connection:
 ==============================================
     1. Import mongoose:
         ------------------------------------------------------
-            const mongoose = require('mongose');                          -- Import mongoose
+            const mongoose = require('mongose');                          -- Import mongoose.
         ------------------------------------------------------
     2. Configure mongoose to use ES6 promises:
         ------------------------------------------------------
-            mongoose.Promise = global.Promise;
+            mongoose.Promise = global.Promise;                            -- Config application to use ES6 promises.
         ------------------------------------------------------
