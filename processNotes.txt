@@ -22,9 +22,9 @@ Objective
 Process Workflow Summary
 ========================
     Phase 1: Project Setup
-
-
-
+    Phase 2: Create a basic express app
+    Phase 3: Setup database and server connection:
+    Phase 4: Add initial middleware
 
 
 
@@ -140,3 +140,13 @@ Phase 3: Setup database and server connection:
                 runServer(DATABASE_URL).catch(err => console.error(err));
             }
         -------------------------------------------------------------------------------------------
+
+
+
+
+Phase 4: Add initial middleware
+===============================
+    1. Setup server to accept json:
+        ----------------------------------------
+            app.use(express.json());
+        ----------------------------------------

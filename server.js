@@ -1,18 +1,28 @@
+//Imports:
 const express = require('express');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const app = express();
 
+//Module Imports:
 const {DATABASE_URL, PORT} = require('./config.js');
 
 
+//Instantiation:
+const app = express();
 
 
+//Middleware:
+app.use(express.json());
+
+
+//Routes:
 app.get('/', function(req, res) {
     res.send('This is a test')
 })
 
+
+//Server:
 let server;
 
 function runServer(databaseUrl, port = PORT) {
