@@ -54,21 +54,21 @@ Phase 2: Create a basic express app
 ===================================
     1. Create express app:
         ----------------------------------------------
-        const express = required('express');                              -- Import express.
-        const app = express();                                            -- Instantiate express app.
+            const express = required('express');                              -- Import express.
+            const app = express();                                            -- Instantiate express app.
         ----------------------------------------------
     2. Create a basic server:
         --------------------------------------------------------
-        let server;                                                       -- Create basic server (this is formatted for testing)
-        server = app.listen('3000', function() {                          -- Create server.
-            console.log('Server is listening on port 3000...')
-        });
+            let server;                                                       -- Create basic server (this is formatted for testing)
+            server = app.listen('3000', function() {                          -- Create server.
+                console.log('Server is listening on port 3000...')
+            });
         ---------------------------------------------------------
     3. Create a basic GET request to test connection:
         ---------------------------------------------------------
-        app.get('/', function(req, res) {                                 -- GET route test (remove after test or modify later).
-            res.send('This is a test');
-        })
+            app.get('/', function(req, res) {                                 -- GET route test (remove after test or modify later).
+                res.send('This is a test');
+            })
         ---------------------------------------------------------
 
 
@@ -88,3 +88,12 @@ Phase 3: Setup database and server connection:
         --------------------------------
             config.js
         --------------------------------
+    4. Create and export database and port:
+        --------------------------------------------------------------------------------------------------------------
+            exports.DATABASE_URL = process.env.DATABASE_URL || 'mongodb://localhost/blog-app-with-embedded-models';
+            exports.PORT = process.env.PORT || 3000;
+        --------------------------------------------------------------------------------------------------------------
+    5. Import the DATABASE_URL and PORT to server.js
+        ------------------------------------------------------------
+            const {DATABASE_URL, PORT} = require('./config.js');
+        -------------------------------------------------------------

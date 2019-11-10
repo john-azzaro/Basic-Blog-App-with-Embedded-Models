@@ -4,6 +4,7 @@ mongoose.Promise = global.Promise;
 
 const app = express();
 
+const {DATABASE_URL, PORT} = require('./config.js');
 
 
 
