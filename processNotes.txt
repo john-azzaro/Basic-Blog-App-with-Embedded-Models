@@ -16,6 +16,8 @@ Objective
     application to repeat and internalize the process for study purposes, so this may be a bit repetitive so please skip
     down to the embedded models section if you are familiar with the orginal basic-blog-app.
 
+    Direct link for Basic-Blog-App process notes: https://github.com/john-azzaro/Basic-Blog-App/blob/master/processNotes.txt.
+
 
 
 
