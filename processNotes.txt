@@ -84,3 +84,7 @@ Phase 3: Setup database and server connection:
         ------------------------------------------------------
             mongoose.Promise = global.Promise;                            -- Config application to use ES6 promises.
         ------------------------------------------------------
+    3. Create config.js file:
+        --------------------------------
+            config.js
+        --------------------------------
