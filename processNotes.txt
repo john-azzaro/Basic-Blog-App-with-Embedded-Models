@@ -167,15 +167,15 @@ Phase 5: Add initial middleware
 ===============================
     1. Setup server to accept json:
         ----------------------------------------
-            app.use(express.json());
+            app.use(express.json());                      -- load express.
         ----------------------------------------
 
     2. Install Morgan:
         ----------------------------------------
-            const morgan = require('morgan');
+            const morgan = require('morgan');             -- load morgan.
 
-            app.use(morgan('common'));
-        ----------------------------------------
+            app.use(morgan('common'));                    -- use the morgan middleware and specify the report structure.
+        ---------------------------------------- 
 
 
 
@@ -185,4 +185,8 @@ Phase 6: Create a mongoose and model (including virtuals and instance methods if
     1. Reference mongoose:
         --------------------------------------------
             const mongoose = require('mongoose');
+        --------------------------------------------
+    2. Configure models.js to use ES6 promises:
+        --------------------------------------------
+        mongoose.Promise = global.Promise;
         --------------------------------------------
