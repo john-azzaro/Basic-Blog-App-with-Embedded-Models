@@ -182,11 +182,16 @@ Phase 5: Add initial middleware
 
 Phase 6: Create a mongoose and model (including virtuals and instance methods if needed):
 =========================================================================================
-    1. Reference mongoose:
+    1. Create a models file:
+        -------------------------------------------
+            models.sj
+        ------------------------------------------- 
+    2. Reference mongoose:
         --------------------------------------------
-            const mongoose = require('mongoose');
+            const mongoose = require('mongoose');         -- load mongoose in the models file.
         --------------------------------------------
-    2. Configure models.js to use ES6 promises:
+    3. Configure models.js to use ES6 promises:
         --------------------------------------------
-        mongoose.Promise = global.Promise;
+        mongoose.Promise = global.Promise;                -- ensure you can use ES6 promises.
         --------------------------------------------
+    
