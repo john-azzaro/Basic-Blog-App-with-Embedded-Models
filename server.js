@@ -1,3 +1,5 @@
+'use strict';
+
 //Imports:
 const express = require('express');
 const mongoose = require('mongoose');
@@ -39,6 +41,7 @@ function runServer(databaseUrl, port = PORT) {
                console.log(`Listening on port ${port}...`);
                resolve();
             })
+
             .on('error', function(err) {
                mongoose.disconnect();
                reject(err);

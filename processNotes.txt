@@ -180,4 +180,9 @@ Phase 5: Add initial middleware
 
 
 
-Phase 6: 
+Phase 6: Create a mongoose and model (including virtuals and instance methods if needed):
+=========================================================================================
+    1. Reference mongoose:
+        --------------------------------------------
+            const mongoose = require('mongoose');
+        --------------------------------------------
