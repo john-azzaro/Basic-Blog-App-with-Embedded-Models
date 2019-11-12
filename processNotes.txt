@@ -192,6 +192,58 @@ Phase 6: Create a mongoose and model (including virtuals and instance methods if
         --------------------------------------------
     3. Configure models.js to use ES6 promises:
         --------------------------------------------
-        mongoose.Promise = global.Promise;                -- ensure you can use ES6 promises.
+            mongoose.Promise = global.Promise;                -- ensure you can use ES6 promises.
         --------------------------------------------
+    4. Add schemas:
+        -------------------------------------------------------------------------------------------------------
+            // author schema
+            let authorSchema = mongoose.Schema({
+                firstName: 'string',
+                lastName: 'string',
+                userName: {
+                type: 'string',
+                unique: true
+                }
+            });
+
+
+            // blogpost schema
+            let blogPostSchema = mongoose.Schema({
+                title: 'string',
+                content: 'string',
+                author: { type: mongoose.Schema.Types.ObjectId, ref: 'Author' },
+                comments: [commentSchema]
+            });
+
+            blogPostSchema.pre('find', function(next) {
+                this.populate('author');
+                next();
+            });
+            
+            blogPostSchema.pre('findOne', function(next) {
+                this.populate('author');
+                next();
+            });
+
+            blogPostSchema.virtual('authorName').get(function() {
+                return `${this.author.firstName} ${this.author.lastName}`.trim();
+            });
+
+            blogPostSchema.methods.serialize = function() {
+                return {
+                id: this._id,
+                author: this.authorName,
+                content: this.content,
+                title: this.title,
+                comments: this.comments
+                };
+            };
+
+
+            // models
+            const Author = mongoose.model('Author', authorSchema);
+            const BlogPost = mongoose.model('BlogPost', blogPostSchema);
+
+            module.exports = {Author, BlogPost};
+        -------------------------------------------------------------------------------------------------------
     
