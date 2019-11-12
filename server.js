@@ -23,7 +23,7 @@ app.use(morgan('common'));
 //Routes:
 
 // GET route for authors
-app.get('/authors', (req, res) => {
+app.get('/authors', function(req, res) {
    Author
      .find()
      .then(authors => {
@@ -43,7 +43,7 @@ app.get('/authors', (req, res) => {
 
 
 // POST route for authors
-app.post('/authors', (req, res) => {
+app.post('/authors', function(req, res) {
    const requiredFields = ['firstName', 'lastName', 'userName'];
    requiredFields.forEach(field => {
      if (!(field in req.body)) {
@@ -85,7 +85,45 @@ app.post('/authors', (req, res) => {
      });
  });
 
-
+// PUT route for author:
+app.put('/authors/:id', function(req, res) {
+   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
+     res.status(400).json({
+       error: 'Request path id and request body id values must match'
+     });
+   }
+ 
+   const updated = {};
+   const updateableFields = ['firstName', 'lastName', 'userName'];
+   updateableFields.forEach(field => {
+     if (field in req.body) {
+       updated[field] = req.body[field];
+     }
+   });
+ 
+   Author
+     .findOne({ userName: updated.userName || '', _id: { $ne: req.params.id } })
+     .then(author => {
+       if(author) {
+         const message = `Username already taken`;
+         console.error(message);
+         return res.status(400).send(message);
+       }
+       else {
+         Author
+           .findByIdAndUpdate(req.params.id, { $set: updated }, { new: true })
+           .then(updatedAuthor => {
+             res.status(200).json({
+               id: updatedAuthor.id,
+               name: `${updatedAuthor.firstName} ${updatedAuthor.lastName}`,
+               userName: updatedAuthor.userName
+             });
+           })
+           .catch(err => res.status(500).json({ message: err }));
+       }
+     });
+ });
+ 
 
 
 
