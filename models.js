@@ -5,6 +5,8 @@ mongoose.Promise = global.Promise;
 
 let commentSchema = mongoose.Schema({ content: 'string' });
 
+
+// author schema
 let authorSchema = mongoose.Schema({
     firstName: 'string',
     lastName: 'string',
@@ -14,26 +16,26 @@ let authorSchema = mongoose.Schema({
     }
 });
 
-var Author = mongoose.model('Author', authorSchema);
 
-var blogPostSchema = mongoose.Schema({
+// blogpost schema
+let blogPostSchema = mongoose.Schema({
     title: 'string',
     content: 'string',
     author: { type: mongoose.Schema.Types.ObjectId, ref: 'Author' },
     comments: [commentSchema]
   });
 
-  blogPostSchema.pre('find', function(next) {
+blogPostSchema.pre('find', function(next) {
     this.populate('author');
     next();
   });
   
-  blogPostSchema.pre('findOne', function(next) {
+blogPostSchema.pre('findOne', function(next) {
     this.populate('author');
     next();
   });
 
-  blogPostSchema.virtual('authorName').get(function() {
+blogPostSchema.virtual('authorName').get(function() {
     return `${this.author.firstName} ${this.author.lastName}`.trim();
   });
 
@@ -46,5 +48,10 @@ var blogPostSchema = mongoose.Schema({
       comments: this.comments
     };
   };
-  
-  const BlogPost = mongoose.model('BlogPost', blogPostSchema);
+
+
+// models
+const Author = mongoose.model('Author', authorSchema);
+const BlogPost = mongoose.model('BlogPost', blogPostSchema);
+
+  module.exports = {Author, BlogPost};
