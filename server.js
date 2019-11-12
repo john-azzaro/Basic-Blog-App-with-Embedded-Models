@@ -21,9 +21,32 @@ app.use(morgan('common'));
 
 
 //Routes:
-app.get('/', function(req, res) {
-    res.send('This is a test')
-})
+
+// GET route for authors
+app.get('/authors', (req, res) => {
+   Author
+     .find()
+     .then(authors => {
+       res.json(authors.map(author => {
+         return {
+           id: author._id,
+           name: `${author.firstName} ${author.lastName}`,
+           userName: author.userName
+         };
+       }));
+     })
+     .catch(err => {
+       console.error(err);
+       res.status(500).json({ error: 'something went terribly wrong' });
+     });
+ });
+
+
+// 
+
+
+
+
 
 
 //Server:

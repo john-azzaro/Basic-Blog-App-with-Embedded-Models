@@ -30,7 +30,6 @@ Process Workflow Summary
 
 
 
-
 Phase 1: Project Setup
 ======================
     // Project Setup:
@@ -76,7 +75,7 @@ Phase 2: Create a basic express app
 
 
 
-Phase 3: Setup datbase and server connection:
+Phase 3: Setup database and server connection:
 =============================================
     0. Create a database or import data you wish to populate your database with:
         * In this case, we're importing author and blogpost data.
@@ -163,7 +162,7 @@ Phase 3: Setup datbase and server connection:
 
 
 
-Phase 5: Add initial middleware
+Phase 4: Add initial middleware
 ===============================
     1. Setup server to accept json:
         ----------------------------------------
@@ -180,7 +179,7 @@ Phase 5: Add initial middleware
 
 
 
-Phase 6: Create a mongoose and model (including virtuals and instance methods if needed):
+Phase 5: Create a mongoose and model (including virtuals and instance methods if needed):
 =========================================================================================
     1. Create a models file:
         -------------------------------------------
@@ -246,4 +245,29 @@ Phase 6: Create a mongoose and model (including virtuals and instance methods if
 
             module.exports = {Author, BlogPost};
         -------------------------------------------------------------------------------------------------------
+
+
+
+
+Phase 6: Add routes for Authors:
+================================
+    -------------------------------------------------------------------------------------------------- 
+        app.get('/authors', (req, res) => {
+        Author
+            .find()
+            .then(authors => {
+            res.json(authors.map(author => {
+                return {
+                id: author._id,
+                name: `${author.firstName} ${author.lastName}`,
+                userName: author.userName
+                };
+            }));
+            })
+            .catch(err => {
+            console.error(err);
+            res.status(500).json({ error: 'something went terribly wrong' });
+            });
+        });
+    --------------------------------------------------------------------------------------------------
     
