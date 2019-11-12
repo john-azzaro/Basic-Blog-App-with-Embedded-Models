@@ -13,3 +13,12 @@ let authorSchema = mongoose.Schema({
 });
 
 var Author = mongoose.model('Author', authorSchema);
+
+var blogPostSchema = mongoose.Schema({
+    title: 'string',
+    content: 'string',
+    author: { type: mongoose.Schema.Types.ObjectId, ref: 'Author' },
+    comments: [commentSchema]
+  });
+
+  const BlogPost = mongoose.model('BlogPost', blogPostSchema);
