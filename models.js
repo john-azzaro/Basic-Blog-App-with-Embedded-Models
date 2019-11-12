@@ -3,6 +3,8 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
+let commentSchema = mongoose.Schema({ content: 'string' });
+
 let authorSchema = mongoose.Schema({
     firstName: 'string',
     lastName: 'string',
@@ -21,6 +23,16 @@ var blogPostSchema = mongoose.Schema({
     comments: [commentSchema]
   });
 
+  blogPostSchema.pre('find', function(next) {
+    this.populate('author');
+    next();
+  });
+  
+  blogPostSchema.pre('findOne', function(next) {
+    this.populate('author');
+    next();
+  });
+
   blogPostSchema.virtual('authorName').get(function() {
     return `${this.author.firstName} ${this.author.lastName}`.trim();
   });
@@ -35,5 +47,4 @@ var blogPostSchema = mongoose.Schema({
     };
   };
   
-
   const BlogPost = mongoose.model('BlogPost', blogPostSchema);
