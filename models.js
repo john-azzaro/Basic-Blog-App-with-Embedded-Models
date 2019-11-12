@@ -25,4 +25,15 @@ var blogPostSchema = mongoose.Schema({
     return `${this.author.firstName} ${this.author.lastName}`.trim();
   });
 
+  blogPostSchema.methods.serialize = function() {
+    return {
+      id: this._id,
+      author: this.authorName,
+      content: this.content,
+      title: this.title,
+      comments: this.comments
+    };
+  };
+  
+
   const BlogPost = mongoose.model('BlogPost', blogPostSchema);
