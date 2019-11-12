@@ -21,4 +21,8 @@ var blogPostSchema = mongoose.Schema({
     comments: [commentSchema]
   });
 
+  blogPostSchema.virtual('authorName').get(function() {
+    return `${this.author.firstName} ${this.author.lastName}`.trim();
+  });
+
   const BlogPost = mongoose.model('BlogPost', blogPostSchema);
