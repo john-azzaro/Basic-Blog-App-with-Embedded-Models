@@ -27,8 +27,10 @@ Process Workflow Summary
     Phase 2: Create a basic express app
     Phase 3: Setup datbase and server connection
     Phase 4: Add initial middleware
-
-
+    Phase 5: Create a mongoose and model (including virtuals and instance methods if needed):
+    Phase 6: Add routes for Authors:
+    Phase 7: Add Routes for posts 
+    Phase 8: Add middleware route for endpoints that do not exist
 
 Phase 1: Project Setup
 ======================
@@ -42,7 +44,7 @@ Phase 1: Project Setup
     // Install dependencies:
         5. npm install mongoose morgan uuid                                            -- install initial dependencies you'll need for the application.
     // Install Dev dependencies:
-        6. npm install --dev-dev nodemon                                               -- install intial dependencies for development.
+        6. npm install --save-dev dotenv nodemon                                       -- install intial dependencies for development.
     // Create server.js file:
         7. server.js                                                                   -- create your server file.   
     // Create custom script for development:
