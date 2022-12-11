@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/john-azzaro/Basic-Blog-App-with-Embedded-Models#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongoose": "^5.7.9",
     "morgan": "^1.9.1",
     "uuid": "^3.3.3"
